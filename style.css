@@ -3,7 +3,7 @@
   --primary-color: #2563eb;       /* Hlavní modrá */
   --primary-hover: #1d4ed8;
   --secondary-color: #7c3aed;     /* Fialový akcent */
-  --accent-color: #059669;        /* Smaragdově zelená pro tlačítka / odznaky */
+  --accent-color: #059669;        /* Zelená pro tlačítko stahování */
   --accent-hover: #047857;
   --bg-color: #f1f5f9;            /* Světlé pozadí */
   --card-bg: #ffffff;             /* Bílé karty */
@@ -130,6 +130,34 @@ main {
   font-size: 1.05rem;
 }
 
+/* Tlačítko pro stažení CV */
+.action-buttons {
+  margin-top: 1.5rem;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--accent-color);
+  color: #ffffff;
+  padding: 0.75rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(5, 150, 105, 0.25);
+  transition: all 0.25s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-download:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(5, 150, 105, 0.35);
+}
+
 /* Barevné bloky / Karty obsahu s rámečkem */
 .content {
   background: var(--card-bg);
@@ -244,7 +272,6 @@ li {
   flex-wrap: wrap;
 }
 
-/* Tlačítka pro odkazované kontakty */
 .contact-list a {
   display: inline-block;
   color: #ffffff;
@@ -302,3 +329,4 @@ footer {
     flex-direction: column;
     align-items: flex-start;
   }
+}
