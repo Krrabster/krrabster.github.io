@@ -1,465 +1,127 @@
+/* Barevná paleta a proměnné */
 :root {
-  --primary-color: #2563eb;
+  --primary-color: #2563eb;       /* Hlavní modrá */
   --primary-hover: #1d4ed8;
-  --bg-color: #f8fafc;
-  --card-bg: #ffffff;
-  --text-color: #1e293b;
-  --text-muted: #64748b;
-  --border-color: #e2e8f0;
+  --secondary-color: #7c3aed;     /* Fialový akcent */
+  --accent-color: #059669;        /* Smaragdově zelená pro tlačítka / odznaky */
+  --accent-hover: #047857;
+  --bg-color: #f1f5f9;            /* Světlé pozadí */
+  --card-bg: #ffffff;             /* Bílé karty */
+  --text-main: #0f172a;           /* Tmavý text */
+  --text-muted: #475569;          /* Šedý text */
+  --border-color: #cbd5e1;        /* Rámečky */
   --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* Základní reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}/*
-Verticard Template
-https://templatemo.com/tm-533-verticard
-*/
-
-body {
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  overflow-x: hidden;
-  background-color: #eeeeee;
-  color: #6C6D6E;
-}
-
-a {
-  transition: all 0.3s ease;
-}
-
-a:hover,
-a:focus {
-  text-decoration: none;
-}
-
-p {
-  line-height: 1.8;
-}
-
-.tm-primary-color {
-  color: #61AEAE;
-}
-
-.tm-secondary-color {
-  color: #0099CC;
-}
-
-
-.tm-page-container {
-  max-width: 600px;
-  width: 100%;  
-}
-
-.tm-section {
-  margin-bottom: 155px;
-  position: relative;
-}
-
-.tm-content-container {      
-  border-radius: 20px;
-  background-color: white;
-}
-
-.tm-nav {
-  position: absolute;
-  right: -150px;
-  top: 45px;
-}
-
-.tm-nav > ul > li {
-  list-style: none;
-}
-
-.tm-nav > ul > li > a {
-  display: block;
-  padding: 12px 15px;
-  color: #999A9B;
-}
-
-.tm-nav > ul > li.active > a,
-.tm-nav > ul > li > a:hover,
-.tm-nav > ul > li > a:focus {
-  color: #0299CC;
-}
-
-.tm-nav-deco {
-  display: inline-block;
-  width: 20px;
-  height: 8px;
-  background-color: #999A9B;
-  vertical-align: middle;
-  margin-right: 20px;
-}
-
-.tm-nav > ul > li.active > a > .tm-nav-deco,
-.tm-nav > ul > li:hover > a > .tm-nav-deco
- {
-  background-color: #0299CC;
-}
-
-.tm-content {  
-  padding: 55px;
-}
-
-.tm-header {
-  padding: 65px 15px;
-}
-
-.tm-title {
-  font-size: 2rem;
-  color: #626364;
-}
-
-.tm-page-title {
-  font-size: 1.5rem;
-  margin-bottom: 40px;
-  color: #656667;
-}
-
-.tm-img {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;  
-}
-
-footer {
-  font-size: 1rem;
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 50px;
-  color: #9A9B9C;
-}
-
-.tm-footer-link {
-  color: #9A9B9C;
-}
-
-/* 
-  Gallery Item Hover Effect
-  https://tympanus.net/codrops/2014/06/19/ideas-for-subtle-hover-effects/
-*/
-
-/* Common style */
-.tm-gallery-item figure {
-	position: relative;	
-	overflow: hidden;
-	margin-bottom: 0;
-	background: #3085a3;
-	text-align: center;
-	cursor: pointer;
-}
-
-.tm-gallery-item figure img {
-	position: relative;
-	display: block;
-	min-height: 100%;
-	max-width: 100%;
-	opacity: 0.8;
-}
-
-.tm-gallery-item figure figcaption {
-	color: #fff;
-	text-transform: uppercase;
-	font-size: 1.25em;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-}
-
-.tm-gallery-item figure figcaption::before,
-.tm-gallery-item figure figcaption::after {
-	pointer-events: none;
-}
-
-.tm-gallery-item figure figcaption,
-.tm-gallery-item figure figcaption > a {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-/* Anchor will cover the whole item by default */
-/* For some effects it will show as a button */
-.tm-gallery-item figure figcaption > a {
-	z-index: 1000;
-	text-indent: 200%;
-	white-space: nowrap;
-	font-size: 0;
-	opacity: 0;
-}
-
-.tm-gallery-item figure h2 {
-	word-spacing: -0.15em;
-	font-weight: 300;
-}
-
-.tm-gallery-item figure h2 span {	font-weight: 800; }
-
-.tm-gallery-item figure h2,
-.tm-gallery-item figure p {
-	margin: 0;
-}
-
-.tm-gallery-item figure p {
-	letter-spacing: 1px;
-	font-size: 60.5%;
-	max-width: 200px;
-	margin: 0 auto;
-}
-
-/*---------------*/
-/***** Bubba *****/
-/*---------------*/
-
-figure.effect-bubba {	background: #9e5406; }
-
-figure.effect-bubba img {
-	opacity: 1;
-	-webkit-transition: opacity 0.35s;
-	transition: opacity 0.35s;
-}
-
-figure.effect-bubba:hover img {
-	opacity: 0.4;
-}
-
-figure.effect-bubba figcaption::before,
-figure.effect-bubba figcaption::after {
-	position: absolute;
-	top: 15px;
-	right: 15px;
-	bottom: 15px;
-	left: 15px;
-	content: '';
-	opacity: 0;
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-}
-
-figure.effect-bubba figcaption::before {
-	border-top: 1px solid #fff;
-	border-bottom: 1px solid #fff;
-	-webkit-transform: scale(0,1);
-	transform: scale(0,1);
-}
-
-figure.effect-bubba figcaption::after {
-	border-right: 1px solid #fff;
-	border-left: 1px solid #fff;
-	-webkit-transform: scale(1,0);
-	transform: scale(1,0);
-}
-
-figure.effect-bubba h2 {
-	font-size: 1.5rem;	
-	-webkit-transition: -webkit-transform 0.35s;
-	transition: transform 0.35s;
-	-webkit-transform: translate3d(0,-5px,0);
-	transform: translate3d(0,-5px,0);
-	opacity: 0;
-}
-
-figure.effect-bubba p {
-	width: 100%;
-	padding: 10px;
-	opacity: 0;
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: translate3d(0,20px,0);
-	transform: translate3d(0,20px,0);
-}
-
-figure.effect-bubba:hover figcaption::before,
-figure.effect-bubba:hover figcaption::after {
-	opacity: 1;
-	-webkit-transform: scale(1);
-	transform: scale(1);
-}
-
-figure.effect-bubba:hover h2,
-figure.effect-bubba:hover p {
-	opacity: 1;
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
-}
-
-.tm-gallery {
-  margin-top: 40px;
-  margin-left: -30px;
-  margin-right: -30px;
-  margin-bottom: -20px;
-}
-
-.tm-gallery-item {
-	margin-top: 15px;
-	margin-bottom: 15px;
-	max-width: 270px;
-}
-
-.tm-content-2 {
-	padding-left: 45px;
-	padding-right: 45px;
-}
-
-figcaption {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
-.tm-img-overlay-wrap {
-	position: relative;
-	min-height: 280px;
-	background-image: url(../img/contact.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-}
-
-.tm-img-overlay {
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0,0,0,0.5);
-}
-
-.tm-img-overlay-text {
-	position: relative;
-	z-index: 1000;
-}
-
-.tm-contact-form {
-	max-width: 380px;
-}
-
-.form-group {
-	margin-bottom: 35px;
-}
-
-.btn {
-	font-size: 1.1rem;
-	padding: 10px 35px;
-	border: none;
-}
-
-.btn-primary {
-	background-color: #9999CC;
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
-	background-color: #9a9afc;
-}
-
-.tm-small {
-	font-size: 90%;
-}
-
-@media (max-width: 945px) {
-  .tm-nav {
-    position: static;
-  }
-
-  .tm-page-container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-
-@media (max-width: 575px) {
-	.tm-gallery-item {
-		max-width: 100%;
-		height: auto;
-	}
-}
-
-@media (max-width: 480px) {
-  footer {
-    display: block;
-  }
-
-  footer span {
-    display: block;
-    padding: 15px;
-  }
 }
 
 body {
   font-family: var(--font-family);
   background-color: var(--bg-color);
-  color: var(--text-color);
+  color: var(--text-main);
   line-height: 1.6;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+/* Kontejner s maximální šířkou */
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
   width: 100%;
 }
 
+/* Záhlaví / Navigace */
 header {
-  background-color: var(--card-bg);
-  border-bottom: 1px solid var(--border-color);
-  padding: 1.2rem 0;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: #ffffff;
+  padding: 1.25rem 0;
+  box-shadow: var(--shadow-md);
+  border-bottom: 3px solid var(--primary-color);
 }
 
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .logo {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* Navigační tlačítka */
+nav {
+  display: flex;
+  gap: 0.75rem;
 }
 
 nav a {
-  color: var(--text-muted);
+  color: #e2e8f0;
   text-decoration: none;
-  margin-left: 1.5rem;
-  font-weight: 500;
-  transition: color 0.2s ease;
+  font-weight: 600;
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.25s ease-in-out;
 }
 
-nav a:hover,
+nav a:hover {
+  background: var(--primary-color);
+  color: #ffffff;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
 nav a.active {
-  color: var(--primary-color);
+  background: var(--secondary-color);
+  color: #ffffff;
+  border-color: var(--secondary-color);
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
 }
 
+/* Hlavní obsah */
 main {
   flex: 1;
-  padding: 2.5rem 1.5rem;
+  padding: 2.5rem 1.25rem;
 }
 
+/* Úvodní sekce (Hero) */
 .hero {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid var(--primary-color);
+  border-left: 8px solid var(--primary-color);
+  box-shadow: var(--shadow-md);
   margin-bottom: 2rem;
 }
 
 .hero h1 {
-  font-size: 2.25rem;
-  color: var(--text-color);
+  font-size: 2.2rem;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  color: var(--primary-color);
-  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--secondary-color);
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
@@ -468,89 +130,175 @@ main {
   font-size: 1.05rem;
 }
 
+/* Barevné bloky / Karty obsahu s rámečkem */
 .content {
   background: var(--card-bg);
   padding: 1.75rem;
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid var(--border-color);
-  margin-bottom: 1.5rem;
+  border-top: 4px solid var(--secondary-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.content:hover {
+  box-shadow: var(--shadow-md);
 }
 
 .content h2 {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
+  color: var(--primary-color);
   margin-bottom: 1.25rem;
-  color: var(--text-color);
-  border-bottom: 2px solid var(--bg-color);
   padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--bg-color);
+}
+
+/* Timeline položky */
+.timeline-item {
+  background: #f8fafc;
+  padding: 1.25rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-color);
+  margin-bottom: 1rem;
 }
 
 .timeline-header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin-bottom: 0.25rem;
 }
 
 .timeline-header h3 {
   font-size: 1.1rem;
+  color: var(--text-main);
 }
 
 .date {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  font-weight: 600;
+  font-size: 0.85rem;
+  background: #e2e8f0;
+  color: var(--text-main);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-weight: 700;
 }
 
 .institution {
-  color: var(--text-muted);
-  font-style: italic;
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 0.95rem;
   margin-bottom: 0.75rem;
 }
 
 ul {
-  padding-left: 1.2rem;
+  padding-left: 1.25rem;
 }
 
 li {
   margin-bottom: 0.4rem;
+  color: var(--text-muted);
 }
 
+/* Dovednosti (Grid) */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.skill-category {
+  background: #f8fafc;
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  border-top: 3px solid var(--primary-color);
 }
 
 .skill-category h3 {
   font-size: 1rem;
-  margin-bottom: 0.5rem;
   color: var(--primary-color);
+  margin-bottom: 0.75rem;
 }
 
+/* Kontaktní seznam & Tlačítka kontaktů */
 .contact-list {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
 }
 
 .contact-list li {
-  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   font-size: 1.05rem;
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  flex-wrap: wrap;
 }
 
+/* Tlačítka pro odkazované kontakty */
 .contact-list a {
-  color: var(--primary-color);
+  display: inline-block;
+  color: #ffffff;
+  background-color: var(--primary-color);
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
   text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
 }
 
 .contact-list a:hover {
-  text-decoration: underline;
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
 }
 
+/* Zápatí */
 footer {
-  background-color: var(--card-bg);
-  border-top: 1px solid var(--border-color);
+  background-color: #1e293b;
+  color: #94a3b8;
+  border-top: 3px solid var(--secondary-color);
   padding: 1.5rem 0;
   text-align: center;
-  color: var(--text-muted);
-  font-size: 0.875rem;
+  font-size: 0.9rem;
 }
+
+/* Responzivita pro mobilní zařízení */
+@media (max-width: 600px) {
+  header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .content {
+    padding: 1.25rem;
+  }
+
+  .contact-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
