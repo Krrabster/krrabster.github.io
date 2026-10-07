@@ -12,11 +12,3 @@ https://mn.github.io
 * `kontakty.html` – stránka s kontaktními údaji a odkazy na profily
 * `style.css` – kaskádové styly (vzhled stránky, responzivita a barevné proměnné)
 * `README.md` – tento popis repozitáře
-
----
-
-## Spuštění na vlastním počítači
-
-1. Stáhněte repozitář jako ZIP nebo jej naklonujte:
-   ```bash
-   git clone [https://github.com/Krrabster/github.io.git](https://github.com/Krrabster/github.io.git)
