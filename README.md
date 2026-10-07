@@ -2,8 +2,7 @@
 
 Jednoduchý osobní informativní web a online životopis napsaný v HTML5 a CSS3. Běží zdarma na GitHub Pages.
 
-https://mn.github.io
-
+krrabster.github.io
 ---
 
 ## Obsah repozitáře
