@@ -2,7 +2,7 @@
 
 Jednoduchý osobní informativní web a online životopis napsaný v HTML5 a CSS3. Běží zdarma na GitHub Pages.
 
-**Web:** [https://mn.github.io
+https://mn.github.io
 
 ---
 
